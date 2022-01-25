@@ -8,8 +8,9 @@
  */
 
 $to = [
-    'j.conan@fondationface.org',
-    ...
+    'unsolo@hotmail.fr',
+    'bataillesylvie@live.fr',
+    'heliosens59@gmail.com',
 ];
 
 $html = '
@@ -19,9 +20,14 @@ $html = '
         </head>
         <body>
             <div>
-                <!-- Vos actualités ici -->
+                Actualité : nous essayons d\'envoyer des mails
             </div>
         </body>
     </html>
 ';
+
+foreach ($to as $adress){
+    echo mail($adress, 'Newsletter', $html, "From: heliosens59@gmail.com") ?
+        "$adress : succès<br>" : "$adress : échec<br>";
+    }
 
